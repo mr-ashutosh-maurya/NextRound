@@ -1,6 +1,5 @@
 import React from 'react'
 import JobCards from './JobCards'
-import { randomJob } from '@/mock/companies'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -14,9 +13,6 @@ const LatestJob = () => {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
-        {/* {randomJob.slice(0, 6).map((item, index) => (
-          <JobCards key={index} {...item} />
-        ))} */}
         {
           allJobs.length > 0 ? allJobs.slice(0, 6).map((job, index) => (
           <JobCards key={index} job={job} />)) : <span>No Job found</span>

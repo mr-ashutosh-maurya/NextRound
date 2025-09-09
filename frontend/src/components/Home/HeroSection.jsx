@@ -4,9 +4,9 @@ import React from "react";
 const HeroSection = () => {
   return (
     <section className="w-full bg-gradient-to-r from-red-50 via-white to-red-100 md:pt-10">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-6 sm:px-10 lg:px-16 py-12 lg:py-20 gap-10">
+      <div className="max-w-7xl mx-auto flex  flex-col lg:flex-row item-center  justify-between px-6 sm:px-10 lg:px-16 ">
         {/* Left Content */}
-        <div className="flex flex-col text-center lg:text-left">
+        <div className="flex flex-col  text-center py-12 lg:py-20 lg:text-left">
           {/* Badge */}
           <span className="px-4 py-2 rounded-full bg-red-100 text-red-600 font-semibold text-xs sm:text-sm shadow-sm animate-bounce self-center lg:self-start">
             🚀 No. 1 Job Hunt Website
@@ -40,9 +40,9 @@ const HeroSection = () => {
         </div>
 
         {/* Right Image */}
-        <div className="flex justify-center lg:justify-end  w-full lg:w-3/4">
+        <div className="flex  justify-center lg:justify-end  w-full lg:w-3/4">
           <img
-            className="w-3/4 sm:w-2/3 lg:w-full max-w-sm sm:max-w-md lg:max-w-xl object-contain drop-shadow-xl"
+            className="w-3/4 sm:w-2/3 h-auto lg:w-full max-w-sm sm:max-w-md lg:max-w-xl object-contain drop-shadow-xl"
             src="./girls-4.png"
             alt="Job search illustration"
           />
