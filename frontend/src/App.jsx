@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from './components/shared/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import Login from './auth/login'
-import Signup from './auth/signup'
+import Login from './auth/Login'
+import Signup from './auth/Signup'
 import Home from './pages/Home'
 import { ToastContainer, toast } from 'react-toastify';
 import Job from './pages/Job'
