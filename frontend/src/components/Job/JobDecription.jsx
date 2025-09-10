@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { JOB_API_ENDPOINT, APPLICATION_API_ENDPOINT } from "@/utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { setSingleJob } from "@/redux/jobSlice";
 import { toast } from "react-toastify";
-import JobSkeleton from "../skelton/jobSkelton";
+import DescriptionSkeleton from "../skelton/DescriptionSkelton";
 
 const JobDecription = () => {
   const { id: jobId } = useParams();

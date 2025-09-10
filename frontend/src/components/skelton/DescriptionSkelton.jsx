@@ -2,7 +2,7 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const JobSkeleton = () => {
+const DescriptionSkeleton = () => {
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-white">
       <Skeleton height={20} width={150} className="mb-3" />
@@ -13,4 +13,4 @@ const JobSkeleton = () => {
   );
 };
 
-export default JobSkeleton;
+export default DescriptionSkeleton;
