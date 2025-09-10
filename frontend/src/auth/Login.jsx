@@ -27,8 +27,6 @@ const Login = () => {
   // Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Data:", form);
-
     try {
       dispatch(setLoading(true));
       const res = await axios.post(`${USER_API_ENDPOINT}/login`, form, {

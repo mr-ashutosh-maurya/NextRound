@@ -12,7 +12,6 @@ const RecommendedJobs = () => {
     const fetchRecommendations = async () => {
       try {
         const res = await axios.get(`${JOB_API_ENDPOINT}/recommendations`, { withCredentials: true });
-        console.log(res);
         if (res.data.success) {
           setRecommendedJobs(res.data.recommendations);
         }

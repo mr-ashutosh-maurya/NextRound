@@ -17,7 +17,6 @@ const SimilarJobs = () => {
           withCredentials: true,
         });
         if (res.data.success) setSimilarJobs(res.data.similar);
-        console.log(res.data.jobs);
       } catch (err) {
         console.error("Error fetching similar jobs:", err);
       } finally {

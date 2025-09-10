@@ -26,9 +26,7 @@ const JobDecription = () => {
       {},
       { withCredentials: true }
     );
-
-    console.log("Apply response:", res.data); // ✅ check populated job
-
+    
     if (res.data.success) {
       toast.success(res.data.message);
       dispatch(setSingleJob(res.data.job)); // ✅ job already populated

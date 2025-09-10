@@ -13,7 +13,6 @@ const RecentlyViewed = () => {
       try {
         const res = await axios.get(`${JOB_API_ENDPOINT}/recently-viewed`, { withCredentials: true });
         if (res.data.success) setRecentJobs(res.data.jobs);
-        console.log(res.data.jobs);
       } catch (err) {
         console.error("Error fetching recently viewed:", err);
       } finally {

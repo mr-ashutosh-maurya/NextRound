@@ -184,7 +184,6 @@ export const getRecommendedJobs = async (req, res) => {
     }
 
     const studentSkills = user.profile.skills;
-    console.log(studentSkills);
     if (!studentSkills || studentSkills.length === 0) {
       return res
         .status(400)

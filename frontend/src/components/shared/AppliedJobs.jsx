@@ -1,62 +1,10 @@
-// import React from "react";
-// import { useSelector } from "react-redux";
-
-// function AppliedJobs() {
-//   const {allAppliedJobs} = useSelector(store=>store.job);
-//   console.log(allAppliedJobs)
-
-//   return (
-//     <div className="mt-5">
-//       <h1 className="text-lg font-bold mb-3">Applied Jobs</h1>
-//       <table className="w-full border border-gray-300 text-sm text-left rounded-md overflow-hidden">
-//         <thead className="bg-gray-100">
-//           <tr>
-//             <th className="px-4 py-2 border">Date</th>
-//             <th className="px-4 py-2 border">Job Role</th>
-//             <th className="px-4 py-2 border">Company</th>
-//             <th className="px-4 py-2 border">Status</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {allAppliedJobs.map((appliedJob) => (
-//             <tr key={appliedJob._id} className="hover:bg-gray-50">
-//               <td className="px-4 py-2 border">{appliedJob?.job?.status}</td>
-//               <td className="px-4 py-2 border">{appliedJob?.job?.status}</td>
-//               <td className="px-4 py-2 border">{appliedJob?.job?.status}</td>
-//               <td className="px-4 py-2 border">
-//                 <span
-//                   className={`px-2 py-1 rounded-md text-xs font-medium ${
-//                     appliedJob?.job?.status === "Selected"
-//                       ? "bg-green-100 text-green-700"
-//                       : appliedJob?.job?.status === "Rejected"
-//                       ? "bg-red-100 text-red-700"
-//                       : appliedJob?.job?.status === "Pending"
-//                       ? "bg-yellow-100 text-yellow-700"
-//                       : "bg-blue-100 text-blue-700"
-//                   }`}
-//                 >
-//                   {appliedJob?.job?.status}
-//                 </span>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// }
-
-// export default AppliedJobs;
-
 import React from "react";
 import { useSelector } from "react-redux";
 
 function AppliedJobs() {
   const { allAppliedJobs } = useSelector((store) => store.job);
-  console.log("Applied Jobs from Redux:", allAppliedJobs);
 
   const applications = allAppliedJobs?.applications || []; // ✅ fix
-  // console.log(applications)
 
   // Helper for status badge
   const getStatusBadge = (status) => {

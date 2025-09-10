@@ -43,5 +43,4 @@ app.use('/api/v1/application', applicationRoute)
 // starting the server and connecting with mongodb
 app.listen(PORT, ()=>{
     connectDB();
-    console.log("✅ server is running properly...");
 })

@@ -151,55 +151,6 @@ export const logout = async (req, res) => {
   }
 };
 
-// ------------------------------------
-// |            UPDATION              |
-// ------------------------------------
-
-// export const updateProfile = async (req, res) => {
-//   try {
-//     const { fullname, email, phoneNumber, bio, skills } = req.body;
-
-//     // Convert skills to array
-//     let skillsArray;
-//     if(skills) skillsArray = skills.split(",").map((skill) => skill.trim());
-
-//     // User id from auth middleware
-//     const userId = req.id;
-
-//     let user = await User.findById(userId);
-
-//     if (!user) {
-//       return res.status(404).json({ message: "User not found" });
-//     }
-
-//     // 2. Update fields
-//     if(fullname) user.fullname = fullname;
-//     if(email) user.email = email;
-//     if(phoneNumber) user.phoneNumber = phoneNumber;
-//     if(bio) user.bio = bio;
-//     if(skills) user.skills = skillsArray;
-//     user.skills = skillsArray;
-
-//     await user.save();
-
-//     // 3. Response
-//     return res.status(200).json({
-//       message: "Profile updated successfully",
-//       user: {
-//         id: user._id,
-//         fullname: user.fullname,
-//         email: user.email,
-//         phoneNumber: user.phoneNumber,
-//         bio: user.bio,
-//         skills: user.skills,
-//       },
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ message: "Server error", error: error.message });
-//   }
-// };
-
 export const updateProfile = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, bio, skills } = req.body;
