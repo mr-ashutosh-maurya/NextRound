@@ -168,6 +168,8 @@ export const getAdminJobs = async (req, res) => {
 import User from "../models/user.js";
 import axios from "axios";
 
+
+
 // -------------------- GET Recommended Jobs --------------------
 export const getRecommendedJobs = async (req, res) => {
   try {
@@ -218,7 +220,7 @@ export const getRecommendedJobs = async (req, res) => {
 
     // Call Python FastAPI service
     const response = await axios.post(
-      "https://nextround-python.onrender.com/recommend",
+      "https://nextround-python.onrender.com",
       payload
     );
 
@@ -243,10 +245,18 @@ export const getRecommendedJobs = async (req, res) => {
   }
 };
 
+
+
 // Get recently viewed jobs
 export const getRecentlyViewedJobs = async (req, res) => {
   try {
-    const user = await User.findById(req.id).populate("recentlyViewed");
+    const user = await User.findById(req.id).populate({
+      path: "recentlyViewed",
+      populate: {
+        path: "company",
+        select: "name logo", // ensures company's name & logo get populated
+      },
+    });
     return res.status(200).json({
       success: true,
       jobs: user.recentlyViewed,
@@ -256,6 +266,8 @@ export const getRecentlyViewedJobs = async (req, res) => {
     return res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
+
 
 export const getSimilarToViewedJobs = async (req, res) => {
   try {
