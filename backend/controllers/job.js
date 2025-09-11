@@ -220,7 +220,7 @@ export const getRecommendedJobs = async (req, res) => {
 
     // Call Python FastAPI service
     const response = await axios.post(
-      "https://nextround-python.onrender.com",
+      "https://nextround-python-a77g.onrender.com",
       payload
     );
 
@@ -298,7 +298,7 @@ export const getSimilarToViewedJobs = async (req, res) => {
     };
 
     const response = await axios.post(
-      "https://nextround-python.onrender.com/recommend",
+      "https://nextround-python-a77g.onrender.com/recommend",
       payload
     );
 
