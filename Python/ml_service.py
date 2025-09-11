@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import os
+from dotenv import load_dotenv
+import uvicorn
 
+# ------------ Load environment variables ------------
+load_dotenv()
+
+HOST = os.getenv("HOST", "0.0.0.0")  # default for deployment
+PORT = int(os.getenv("PORT", 8000))  # default fallback
+
+# ------------ FastAPI App ------------
 app = FastAPI(title="Job Recommendation Service")
 
 # ----------- Request & Response Models -----------
@@ -54,4 +64,5 @@ def recommend_jobs(request: RecommendRequest):
     return {"recommendations": recommendations}
 
 # ----------- Run Server -----------
-# uvicorn ml_service:app --reload --port 8000
+if __name__ == "__main__":
+    uvicorn.run("ml_service:app", host=HOST, port=PORT, reload=True)
