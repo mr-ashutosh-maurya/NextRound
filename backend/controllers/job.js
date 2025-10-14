@@ -219,10 +219,7 @@ export const getRecommendedJobs = async (req, res) => {
     };
 
     // Call Python FastAPI service
-    const response = await axios.post(
-      "https://nextround-python-a77g.onrender.com",
-      payload
-    );
+    const response = await axios.post("https://nextround-python-a77g.onrender.com/recommend", payload);
 
     // Match recommended IDs back with job details
     let recommendedJobs = response.data.recommendations.map((rec) => {
@@ -297,10 +294,7 @@ export const getSimilarToViewedJobs = async (req, res) => {
       })),
     };
 
-    const response = await axios.post(
-      "https://nextround-python-a77g.onrender.com/recommend",
-      payload
-    );
+    const response = await axios.post("https://nextround-python-a77g.onrender.com/recommend", payload);
 
     // Map recommendations to job details
     const similarJobs = response.data.recommendations.map((rec) => {

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Menu, X } from "lucide-react";
+import { Funnel, Menu, X } from "lucide-react";
 import Filter from "@/components/Job/Filter";
 import Jobs from "@/components/Job/Jobs";
+import Footer from "@/components/Home/Footer";
 
 const Job = () => {
   const { allJobs } = useSelector((store) => store.job);
@@ -59,7 +60,7 @@ const Job = () => {
           onClick={() => setShowFilter(true)}
           className="p-2 border rounded-md"
         >
-          <Menu />
+          <Funnel />
         </button>
       </div>
 
@@ -78,7 +79,7 @@ const Job = () => {
           </div>
 
           {/* Scrollable filter content */}
-          <div className="h-[calc(100vh-56px)] md:h-auto overflow-y-auto p-4">
+          <div className="h-[calc(100vh-56px)] md:h-auto p-4">
             <Filter
               filters={filters}
               onFilterChange={handleFilterChange}
@@ -112,6 +113,7 @@ const Job = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

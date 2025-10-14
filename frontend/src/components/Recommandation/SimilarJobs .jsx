@@ -16,6 +16,7 @@ const SimilarJobs = () => {
         const res = await axios.get(`${JOB_API_ENDPOINT}/similar-viewed`, {
           withCredentials: true,
         });
+        console.log(res);
         if (res.data.success) setSimilarJobs(res.data.similar);
       } catch (err) {
         console.error("Error fetching similar jobs:", err);

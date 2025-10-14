@@ -151,6 +151,7 @@ const Signup = () => {
                   type="radio"
                   name="role"
                   value="recruiter"
+                  disabled   // 🔒 disable recruiter
                   checked={form.role === "recruiter"}
                   onChange={handleChange}
                 />

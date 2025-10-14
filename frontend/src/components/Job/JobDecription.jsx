@@ -5,6 +5,7 @@ import { JOB_API_ENDPOINT, APPLICATION_API_ENDPOINT } from "@/utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { setSingleJob } from "@/redux/jobSlice";
 import { toast } from "react-toastify";
+import Footer from "../Home/Footer";
 
 const JobDecription = () => {
   const { id: jobId } = useParams();
@@ -134,6 +135,7 @@ const JobDecription = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

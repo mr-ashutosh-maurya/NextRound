@@ -32,18 +32,18 @@ const Navbar = () => {
   // helper to check active route
   const isActive = (path) =>
     location.pathname === path
-      ? "bg-red-500 text-white px-3 py-1 rounded-3xl"
-      : "hover:text-red-500 transition-colors duration-200";
+      ? "bg-red-500 text-white px-3 py-1 rounded-3xl transition-all duration-300"
+      : "hover:text-red-500 transition-all duration-300";
 
   return (
-    <div className="bg-white shadow-md sticky top-0 z-50">
+    <div className="bg-white shadow-md  top-0 z-50">
       <div className="flex items-center justify-between mx-auto px-6 max-w-7xl h-16">
         {/* LEFT: Hamburger + Logo */}
         <div className="flex items-center gap-3">
           {/* Hamburger (mobile only) */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
 
         {/* CENTER/RIGHT: Desktop Menu */}
         <div className="hidden md:flex items-center gap-9">
-          <ul className="flex gap-5 font-medium items-center cursor-pointer">
+          <ul  className="flex gap-5 font-medium items-center cursor-pointer">
             {user && user.role === "recruiter" ? (
               <>
                 <Link to="/admin/companies">

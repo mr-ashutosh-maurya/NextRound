@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const InfoCard = () => {
     const navigate = useNavigate();
   return (
-    <div className="rounded-2xl max-w-7xl mx-auto px-10 p-10 md:pb-0 bg-gradient-to-r from-white to-red-100 border border-red-200 flex items-center justify-between shadow-sm">
+    <div className="rounded-2xl max-w-7xl mx-6 p-10 md:pb-0 bg-gradient-to-r from-white to-red-100 border border-red-200 flex items-center justify-between shadow-sm">
       {/* left side */}
       <div className="md:w-1/2">
         <div className="flex items-start gap-3 mb-4">

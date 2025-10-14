@@ -7,9 +7,9 @@ const router = express.Router()
 
 //@api/v1/job/endpoint
 router.route("/post").post(isAuthenticated,postJob);
-router.route("/get").get(isAuthenticated,getAllJobs);
+router.route("/get").get(getAllJobs);
 router.route("/getadminjobs").get(isAuthenticated, getAdminJobs);
-router.route("/get/:id").get(isAuthenticated,getJobById);
+router.route("/get/:id").get(getJobById);
 
 router.get("/recommendations", isAuthenticated, getRecommendedJobs);
 router.get("/recently-viewed", isAuthenticated, getRecentlyViewedJobs);
